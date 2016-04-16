@@ -1,0 +1,22 @@
+{
+  "name": "NodejsStarterApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.13.x",
+    "cfenv": "1.0.x"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.2.x"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+    "georedis": "^3.0.3",
+    "joi": "^8.0.5",
+    "sequelize": "^3.21.0"
+  }
+}
