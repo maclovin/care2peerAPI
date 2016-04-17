@@ -17,8 +17,10 @@
   "devDependencies": {
     "crypto": "0.0.3",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "georedis": "^3.0.3",
     "joi": "^8.0.5",
-    "sequelize": "^3.21.0"
+    "sequelize": "^3.21.0",
+    "sql-injection": "0.0.5"
   }
 }

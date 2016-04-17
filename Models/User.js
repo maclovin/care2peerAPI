@@ -11,7 +11,7 @@ var User = db.define('user', {
     field: 'email'
   },
   phone: {
-    type: Sequelize.FLOAT(15),
+    type: Sequelize.STRING(20),
     field: 'phone'
   },
   birthdate: {
