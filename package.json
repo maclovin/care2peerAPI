@@ -21,6 +21,7 @@
     "georedis": "^3.0.3",
     "joi": "^8.0.5",
     "sequelize": "^3.21.0",
-    "sql-injection": "0.0.5"
+    "sql-injection": "0.0.5",
+    "twilio": "^2.9.1"
   }
 }

@@ -10,6 +10,7 @@ var router = express.Router();
 var sqlinjection = require('sql-injection');
 var Joi = require('joi');
 var Encrypt = require('./Modules/Encrypt');
+var Sms = require('./Modules/Sms');
 var Schemas = require('./Modules/Schemas');
 var User = require('./Models/User');
 var Contact = require('./Models/Contact');
@@ -172,6 +173,30 @@ router.route('/contacts')
     }
   });
 
+router.route('/testmonial')
+  .post(function(req, res) {
+    Joi.validate({owner: sess.userId, testmonial: req.body.testmonial, category: req.body.category, latLon: req.body.latLon, where: req.body.where, when: req.body.when}, Schemas.testmonial, function(err, value) {
+      if (!err) {
+        Testmonial.create({
+          owner: value.owner,
+          testmonial: value.testmonial,
+          category: value.category,
+          latLon: value.latLon,
+          where: value.where,
+          when: value.when
+        });
+
+        res.json({message: 'OK'});
+        return;
+      }
+
+      res.json({message: err.message});
+    });
+  })
+  .get(function(req, res) {
+    // TODO
+  });
+
 router.route('/help')
   .get(function(req,res) {
     res.json({message: 'OK'});
@@ -203,8 +228,14 @@ router.route('/logout')
       res.json({message: 'BYE'});
   });
 
+router.route('/sms/test')
+  .post(function(req, res) {
+    Sms(['+5511970333270', '+5511999719371'], 'Teste 123');
+  });
+
 app.use('/api', router);
 
 app.listen(appEnv.port, '0.0.0.0', function() {
+  console.log(appEnv);
   console.log("server starting on " + appEnv.url);
 });

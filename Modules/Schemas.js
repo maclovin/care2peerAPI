@@ -16,8 +16,9 @@ var schemas = {
   }),
   testmonial: Joi.object().keys({
     owner: Joi.number().required(),
-    content: Joi.string().required(),
+    testmonial: Joi.string().required(),
     category: Joi.number().required(),
+    latLon: Joi.string().required(),
     where: Joi.string().required(),
     when: Joi.date().required()
   })
