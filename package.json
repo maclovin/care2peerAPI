@@ -20,6 +20,7 @@
     "express-session": "^1.13.0",
     "georedis": "^3.0.3",
     "joi": "^8.0.5",
+    "redis": "^2.6.0-1",
     "sequelize": "^3.21.0",
     "sql-injection": "0.0.5",
     "twilio": "^2.9.1"
